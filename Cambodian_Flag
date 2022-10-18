@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Feb  7 22:08:44 2022
+
+@author: sonithriem
+"""
+
+import turtle
+crush = turtle.Turtle()
+crush.shape("turtle")
+
+#This is a simplified Cambodian flag. 
+
+#draw the three rectangle of the Cambodian flag of different colors 
+def draw_square(color,x_coord,y_coord):
+    crush.penup()
+    crush.goto(x_coord,y_coord)
+    crush.pendown()
+    for i in range(2):
+        crush.fillcolor(color)
+        crush.begin_fill()
+        crush.forward(660)
+        crush.right(90)
+        crush.forward(223)
+        crush.right(90)
+        crush.end_fill()
+    crush.penup()
+    crush.goto(x_coord,y_coord)
+draw_square('blue',-330,330)
+draw_square('red',-330,107)
+draw_square('blue',-330,-116)
+
+#go to the middile of the canvas 
+crush.penup()
+crush.goto(-75,0)
+crush.pendown()
+
+#draw  white trapezoid 
+crush.fillcolor('white')
+crush.begin_fill()
+crush.goto(75,0)
+crush.goto(130,-60)
+crush.goto(-130,-60)
+crush.goto(-75,0)
+crush.end_fill()
+
+#transition 
+crush.penup()
+crush.goto(-75,30)
+crush.pendown()
+
+#draw white rectangle 
+crush.fillcolor('white')
+crush.begin_fill()
+crush.goto(75,30)
+crush.goto(75,0)
+crush.goto(-75,0)
+crush.goto(-75,30)
+crush.end_fill()
+
+#transition 
+crush.penup()
+crush.goto(0,80)
+crush.pendown()
+
+#draw mid triangle
+crush.fillcolor('white')
+crush.begin_fill()
+crush.goto(37.5,30)
+crush.goto(-37.5,30)
+crush.goto(0,80)
+crush.end_fill()
+
+#right side triangle 
+crush.penup()
+crush.goto(37.5,30)
+crush.pendown()
+
+crush.fillcolor('white')
+crush.begin_fill()
+crush.goto(56.25,60)
+crush.goto(75,30)
+crush.goto(37.5,30)
+crush.end_fill()
+
+#draw left side triangle 
+crush.penup()
+crush.goto(-37.5,30)
+crush.pendown()
+
+crush.fillcolor('white')
+crush.begin_fill()
+crush.goto(-56.25,60)
+crush.goto(-75,30)
+crush.goto(-37.5,30)
+crush.end_fill()
+
+turtle.done()
+turtle.bye()
